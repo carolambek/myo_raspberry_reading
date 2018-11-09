@@ -1,11 +1,9 @@
 # Overview
-
 This project allows to read raw data from the Myo armband with the Raspberry Pi 3 or Zero W. The code uses the bluez library to connect via bluetooth low energy (BLE) the Myo to the Raspberry.
 
 The reading protocol is based on the work of dzhu (https://github.com/dzhu/myo-raw).
 
 # Requirements
-
 - python >=2.7
 - bluez 5.43
 - pexpect
@@ -15,9 +13,7 @@ The reading protocol is based on the work of dzhu (https://github.com/dzhu/myo-r
 - Myo armband from Thalmic Labs
 
 # Included files
-
 ## myo_rpi_ble.py (read raw EMG/IMU data)
-
 myo_rpi_ble.py must be launched on the Raspberry and it reads raw data from the Myo armband. It uses the pexpect library to spawn commands in gatttool. It implements the following functions:
 
 - connect() & disconnect(): to connect/disconnect from the Myo.
@@ -38,11 +34,21 @@ In main() is defined the MAC address of the Myo. Please change it to your own. T
 Once gatttool launched, EMG data are collected in rawData and can then be sent out via serial.
 
 ## filtering.py
-
 In filtering.py is the function data_filtering() which applies a moving window average smoothing on raw data. The size of this window is defined by rawWinSize. Data can also be saved into a text file with the function save_output_to_file().
 
 ## common.py
-
 Here are common functions to read data packets.
 
-## Installation
+# Installation
+In order to install the different libraries and packages to run this code on your RPi, you will have to do the following:
+
+First enable bluetooth on RPi zero in /boot/config.txt by commenting the following 2 lines:
+```
+#dtoverlay=pi3-miniuart-bt
+#dtoverlay=pi3-disable-bt
+```
+You might have to reboot for the changes to take place.
+
+## Authors
+
+* **Charles Lambelet**
