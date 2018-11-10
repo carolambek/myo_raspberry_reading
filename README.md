@@ -42,12 +42,24 @@ Here are common functions to read data packets.
 # Installation
 In order to install the different libraries and packages to run this code on your RPi, you will have to do the following:
 
-First enable bluetooth on RPi zero in /boot/config.txt by commenting the following 2 lines:
+First enable bluetooth on RPi in /boot/config.txt by commenting the following 2 lines:
 ```
 #dtoverlay=pi3-miniuart-bt
 #dtoverlay=pi3-disable-bt
 ```
 You might have to reboot for the changes to take place.
+
+Then download the source for BlueZ (I used version 5.43):
+```
+wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.43.tar.xz
+or
+wget https://mirrors.edge.kernel.org/pub/linux/bluetooth/bluez-5.43.tar.xz
+```
+and unpack it:
+```
+tar xvf bluez-5.43.tar.xz
+```
+
 
 ## Authors
 
