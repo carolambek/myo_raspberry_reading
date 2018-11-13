@@ -59,7 +59,27 @@ and unpack it:
 ```
 tar xvf bluez-5.43.tar.xz
 ```
-
+Change the directory:
+```
+cd bluez-5.43/
+```
+Install the following libraries:
+```
+sudo apt-get update
+sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
+```
+Build BlueZ with the standard configuration:
+```
+./configure
+```
+Start the compilation with standard make (be patient):
+```
+make
+```
+And install it:
+```
+sudo make install
+```
 
 ## Authors
 
